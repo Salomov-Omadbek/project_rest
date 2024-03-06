@@ -98,17 +98,9 @@ class BookUpdateApiView(APIView):
 #     serializer_class = BookSerializer
 
 
-class BookCreateApiView(APIView):
-
-    def post(self, request):
-        data = request.data
-        serializer = BookSerializer(data=data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            data = {'status': f"Books are saved to the database",
-                    'books': data
-                    }
-        return Response(data)
+class  BookCreateApiView(generics.CreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
 
 
 class BookListCreateApiView(generics.ListCreateAPIView):
