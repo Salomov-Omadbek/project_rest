@@ -28,9 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # yangi
+    'django.contrib.sites',
 
-    # packages
     'rest_framework',
     'rest_framework.authtoken',
     'drf_yasg',
@@ -41,7 +40,6 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'whitenoise.runserver_nostatic',
 
-    # local apps
     'books',
 ]
 
@@ -62,7 +60,7 @@ ROOT_URLCONF = 'library_project.urls'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',  # barcha endpointlar autentifikatsiyali
+        'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.authentication.SessionAuthentication',
@@ -147,5 +145,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # new
-SITE_ID = 1   # yangi
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1

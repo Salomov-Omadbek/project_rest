@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
 from .models import Book
-
+from .models import Rating
 
 class BookSerializer(serializers.ModelSerializer):
 
@@ -42,3 +42,8 @@ class BookSerializer(serializers.ModelSerializer):
                     "message": "Narx notogri kiritilgan"
                 }
             )
+
+class RatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Rating
+        fields = ['user', 'book', 'rating']
